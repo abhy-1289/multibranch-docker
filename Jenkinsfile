@@ -9,14 +9,14 @@ pipeline {
         }
         stage ("Tag") {
             steps {
-                sh 'docker tag image3 shaikmustafa/paytm:movie'
+                sh 'docker tag image3 abhishekp2k1/paytm:movie'
             }
         }
         stage('Push') {
             steps {
                 script {
-                    withDockerRegistry(credentialsId: 'dockerhub') {
-                        sh 'docker push shaikmustafa/paytm:movie'
+                    withDockerRegistry(credentialsId: 'dockerhub-id') {
+                        sh 'docker push abhishekp2k1/paytm:movie' 
                     }
                 }
             }
